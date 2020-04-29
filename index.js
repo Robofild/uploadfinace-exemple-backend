@@ -2,6 +2,7 @@ const express=require('express')
 const app =express()
 const db=require('./config/db')
 const consign= require('consign')
+const cors= require('cors')
 
 
 consign()
@@ -13,7 +14,7 @@ consign()
 
 app.db=db
 
-
+app.use(cors())
 app.listen(3000,()=>{
     console.log('Backend execultando ok...')
 })
