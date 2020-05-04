@@ -15,6 +15,7 @@ consign()
 app.db=db
 
 app.use(cors())
-app.listen(3000,()=>{
+const PORT=process.env.port || 3000
+app.listen(PORT,()=>{
     console.log('Backend execultando ok...')
 })
