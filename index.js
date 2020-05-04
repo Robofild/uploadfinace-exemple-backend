@@ -14,8 +14,10 @@ consign()
 
 app.db=db
 
-app.use(cors({ origin:"https://whispering-beach-41375.herokuapp.com"}))
+app.use(cors())
+app.use(express.json())
 const PORT=process.env.port || 3000
 app.listen(PORT,()=>{
     console.log('Backend execultando ok...')
 })
+app.use(require('./config/routes'))
