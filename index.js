@@ -2,7 +2,7 @@ const express=require('express')
 const app =express()
 const db=require('./config/db')
 const consign= require('consign')
-const cors= require('cors')
+
 
 
 consign()
@@ -13,11 +13,10 @@ consign()
     .into(app)
 
 app.db=db
+app.set( 'port', ( process.env.PORT || 3000));
 
-app.use(cors())
-app.use(express.json())
-const PORT=process.env.port || 3000
-app.listen(PORT,()=>{
-    console.log('Backend execultando ok...')
-})
+// Start node server
+app.listen( app.get( 'port' ), function() {
+  console.log( 'Node server is running on port ' + app.get( 'port' ));
+  });
 app.use(require('./config/routes'))
