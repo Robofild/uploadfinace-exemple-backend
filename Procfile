@@ -1,1 +1,1 @@
-web:node index.js
+web:knex migration:rollback && knex migration:latest &&knex seed:run && node index.js
