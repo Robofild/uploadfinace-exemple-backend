@@ -4,7 +4,7 @@ module.exports=app=>{
     const Teste=((req,res)=>{
 
      
-        res.send('Estou bem')
+        res.send('<b>Estou bem</b>')
 
     })
 
