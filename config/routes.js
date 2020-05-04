@@ -3,7 +3,12 @@ module.exports = app => {
      app.post('/signup', app.api.user.save)
      app.post('/signin', app.api.auth.signin)
      
+     app.route('/teste')
+     .get(app.api.testecomunicacao.Teste)
+
+  
      
+
      app.route('/totaldisponivel')
           .all(app.config.passport.authenticate())
           .get(app.api.gerente.MovimentoSumR)
